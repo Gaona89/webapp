@@ -1,0 +1,25 @@
+server:
+  port: 9000
+  context-path: /webapp
+spring:
+  profiles:
+    active: develop
+    
+---
+spring:
+  profiles:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/Jugador
+    username: postgres
+    password: sa123
+    driverClassName: org.postgresql.Driver
+  mvc:
+    throw-exception-if-no-handler-found: true
+  jackson:
+    date-format: "dd/MM/yyyy"
